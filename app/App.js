@@ -11,7 +11,7 @@ class App extends Component {
 		return (
 			<div>
 				<h1>Test from App.js</h1>
-				<Crypto />
+				{/* <Crypto /> */}
 			</div>
 		);
   }

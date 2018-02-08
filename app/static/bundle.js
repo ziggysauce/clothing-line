@@ -18285,10 +18285,6 @@ var _reactDom = __webpack_require__(7);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _Crypto = __webpack_require__(28);
-
-var _Crypto2 = _interopRequireDefault(_Crypto);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18320,7 +18316,7 @@ var App = function (_Component) {
 					null,
 					'Test from App.js'
 				),
-				_react2.default.createElement(_Crypto2.default, null)
+				_react2.default.createElement(Crypto, null)
 			);
 		}
 	}]);
@@ -18329,63 +18325,6 @@ var App = function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(7);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Crypto = function (_Component) {
-	_inherits(Crypto, _Component);
-
-	function Crypto() {
-		_classCallCheck(this, Crypto);
-
-		var _this = _possibleConstructorReturn(this, (Crypto.__proto__ || Object.getPrototypeOf(Crypto)).call(this));
-
-		_this.state = {};
-		return _this;
-	}
-
-	_createClass(Crypto, [{
-		key: 'render',
-		value: function render() {
-			return _react2.default.createElement(
-				'div',
-				null,
-				'Test from Crypto.js'
-			);
-		}
-	}]);
-
-	return Crypto;
-}(_react.Component);
-
-exports.default = Crypto;
 
 /***/ })
 /******/ ]);

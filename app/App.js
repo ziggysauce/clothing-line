@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Crypto from './Crypto';
 
 class App extends Component {
   constructor() {

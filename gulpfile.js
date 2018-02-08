@@ -21,6 +21,7 @@ const models = {
   User: db.User,
 };
 
+// Sync DB tables
 gulp.task('sync', (cb) => {
   db.User.sync({ force: true })
   // .then(() => redis.set('allTeacherData', 'null'))
@@ -28,6 +29,7 @@ gulp.task('sync', (cb) => {
   .catch((err) => { cb(err); });
 });
 
+// Seed DB for testing
 gulp.task('seed:seed', ['sync'], (cb) => {
   SequelizeFixtures.loadFile(models)
     .then(() => {
@@ -100,3 +102,7 @@ gulp.task('dbwatch', () => {
 
 gulp.task('default', ['nodemon', 'dbwatch']);
 // gulp.task('default', ['nodemon']);
+
+
+// `gulp sync` when table is empty
+// `gulp` for nodemon and dbwatch

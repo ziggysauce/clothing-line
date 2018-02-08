@@ -22,7 +22,7 @@ const User = db.define('user', {
   },
   userType: {
     type: Sequelize.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   image: {
     type: Sequelize.TEXT,

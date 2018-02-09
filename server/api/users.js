@@ -15,7 +15,7 @@ const fetchAllUserData = async (req, res) => {
         userType: 1,
       }
     });
-    console.log('All information front loaded ', allData);
+    // console.log('All information front loaded ', allData);
     res.status(200).send(allData);
   } catch (error) {
     console.log('Something went wrong ', error);

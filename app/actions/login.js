@@ -43,6 +43,7 @@ const receiveLogout = () => ({
 exports.loginUser = (creds, history) => {
   console.log('This is Creds: ', creds);
   return (dispatch) => {
+    console.log("am i even in this bitchh?")
     dispatch(requestLogin(creds));
     return axios.get(`/api/users/${creds.email}/${creds.password}`)
       .then((response) => {

@@ -40,7 +40,7 @@
     "redux": "^3.7.2",
     "redux-auth": "0.0.5-beta5",
     "redux-logger": "^3.0.6",
-    "redux-persist": "^5.6.12",
+    "redux-persist": "^5.7.2",
     "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.6",
     "sequelize": "^4.33.0",

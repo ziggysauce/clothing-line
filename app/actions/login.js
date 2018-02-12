@@ -65,7 +65,7 @@ exports.loginAdmin = (creds, history) => {
   console.log('This is Creds: ', creds);
   return (dispatch) => {
     dispatch(requestLogin(creds));
-    return axios.get(`/api/admins/${creds.email}/${creds.password}`)
+    return axios.get(`/api/users/${creds.email}/${creds.password}`)
       .then((response) => {
         if (!response.data) {
           dispatch(loginError('Bad Request...'));

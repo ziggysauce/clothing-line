@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/main.scss';
 
 class Login extends Component {
 
@@ -22,31 +23,20 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <h1>Login</h1>
-        <form>
-          <div>
-
-            <input
-              type="text"
-              ref="email"
-              className="form-control"
-              placeholder="email"
-            />
-              <span>username</span>
-
-          </div>
-          <div>
-
-            <input
-              type="password"
-              ref="password"
-              className="form-control"
-              placeholder="Password"
-            />
-            <span>password!!!!!!!!!!!!</span>
-
-          </div>
-          <button onClick={event => this.handleClick(event)}>Submit</button>
+        <form className="form-container">
+          <input
+            type="text"
+            ref="email"
+            className="input-container"
+            placeholder="email"
+          />
+          <input
+            type="password"
+            ref="password"
+            className="input-container"
+            placeholder="password"
+          />
+          <button className="submit-button" onClick={event => this.handleClick(event)}>Submit</button>
         </form>
       </div>
     );

@@ -1,4 +1,6 @@
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 const SRC_DIR = path.resolve(__dirname, './app');
 const BUILD_DIR = path.resolve(__dirname, './app/static');
 
@@ -19,13 +21,9 @@ module.exports = {
         }],
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.scss$/,
+        test: /\.(css|sass|scss)$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
+      }
     ]
   }
 }

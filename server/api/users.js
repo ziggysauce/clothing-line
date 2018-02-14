@@ -41,10 +41,10 @@ const fetchUser = async (req, res) => {
 
 const createUser = async (req, res) => {
   console.log("this is the request", req.body);
-  console.log("this is the params", req.params);
+  console.log("this is the params!", req.params);
 
   try {
-    console.log("this is the request!!!!!!!!!!", req.body);
+    console.log("this is the request!!!!", req.body);
     const salt = await bcrypt.genSalt(saltRounds);
     const hash = await bcrypt.hash(req.body.password, salt);
     const person = await db.User.findOne({ where: { email: req.body.email } });

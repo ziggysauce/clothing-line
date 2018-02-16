@@ -49,4 +49,5 @@ devServer: {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
   ],
+  devtool: 'cheap-module-eval-source-map'
 }

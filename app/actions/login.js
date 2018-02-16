@@ -41,7 +41,7 @@ const receiveLogout = () => ({
 });
 
 exports.loginUser = (creds, history) => {
-  console.log('This is Creds: ', creds);
+  console.log('This is Creds for login: ', creds);
   return (dispatch) => {
     console.log("am i even in this bitchh?")
     dispatch(requestLogin(creds));
@@ -54,7 +54,7 @@ exports.loginUser = (creds, history) => {
         localStorage.setItem('id_token', response.data.id_token);
         localStorage.setItem('access_token', response.data.id_token);
         dispatch(receiveLogin(response.data));
-        history.push('/home');
+        history.push('/');
       })
       .catch((err) => {
         console.log('Error: ', err);
@@ -94,7 +94,9 @@ exports.signupUser = (creds, history) => {
     username: creds.username,
     image: creds.image,
   };
+  console.log('This is Creds for signup: ', creds);
   return (dispatch) => {
+    console.log('signup REACHEDDDD')
     dispatch(requestLogin(creds));
     return axios.post('/api/users', body)
       .then((response) => {
@@ -102,6 +104,7 @@ exports.signupUser = (creds, history) => {
           dispatch(loginError('Bad Request...'));
           return Promise.reject(response);
         }
+        console.log('local storage session saved!');
         localStorage.setItem('id_token', response.data.id_token);
         localStorage.setItem('access_token', response.data.id_token);
         dispatch(receiveLogin(response.data));
@@ -114,8 +117,10 @@ exports.signupUser = (creds, history) => {
 
 
 exports.logoutUser = () => (dispatch) => {
+  console.log('logging out...');
   dispatch(requestLogout());
   localStorage.removeItem('id_token');
   localStorage.removeItem('access_token');
   dispatch(receiveLogout());
+  console.log('logged out');
 };

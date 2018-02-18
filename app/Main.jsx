@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch, withRouter } from 'react-router-dom';
-import Home from './components/Home.jsx';
-import Signup from './components/Signup.jsx';
-import Login from './components/Login.jsx';
+import Home from './components/pages/Home.jsx';
 
+import Signup from './components/user/Signup.jsx';
+import Login from './components/user/Login.jsx';
+import Cart from './components/user/Cart.jsx';
+import Account from './components/user/Account.jsx';
 
-// The Main component renders one of the routes provided
-// Routes (provided that one matches). 
+import Women from './components/pages/Women.jsx';
+import Men from './components/pages/Men.jsx';
+import Accessories from './components/pages/Accessories.jsx';
+import Lookbook from './components/pages/Lookbook.jsx';
+
+import About from './components/pages/About.jsx';
+
 
 class Main extends Component {
   
@@ -29,11 +36,28 @@ class Main extends Component {
             />
           </Route>
           <Route path='/signup' component={Signup} >
-            <Signup history={history} />
+            <Signup 
+              history={history} 
+              isAuthenticated={isAuthenticated}
+              errorMessage={errorMessage}
+              dispatch={dispatch}
+            />
           </Route>
           <Route path='/login' component={Login} >
-            <Login history={history} />
+            <Login 
+              history={history} 
+              isAuthenticated={isAuthenticated}
+              errorMessage={errorMessage}
+              dispatch={dispatch}
+            />
           </Route>
+          <Route path="/account" component={Account}></Route>
+          <Route path="/cart" component={Cart}></Route>
+          <Route path="/women" component={Women}></Route>
+          <Route path="/men" component={Men}></Route>
+          <Route path="/accessories" component={Accessories}></Route>
+          <Route path="/lookbook" component={Lookbook}></Route>
+          <Route path="/about" component={About}></Route>
         </Switch>
     );
   }

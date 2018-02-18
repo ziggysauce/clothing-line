@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { signupUser, loginUser, logoutUser } from '../actions/login';
-import Login from "./Login.jsx";
-import Signup from "./Signup.jsx";
+import { signupUser, loginUser, logoutUser } from '../../actions/login';
+import Navbar from '../navbar/Navbar.jsx';
+import Login from '../user/Login.jsx';
+import Signup from '../user/Signup.jsx';
 
 class Home extends Component {
   constructor(props) {
@@ -16,19 +17,10 @@ class Home extends Component {
     return (
       <div>
         <h1>This is the homepage!!!!</h1>
+        <Navbar/>
         <button><Link to="/signup">Signup</Link></button>
         <button><Link to="/login">Login</Link></button>
         <button onClick={logoutUser}>Logout</button>
-        <Signup
-          history={history}
-          isAuthenticated={isAuthenticated}
-          errorMessage={errorMessage}
-          onSignupClick={creds => dispatch(signupUser(creds, history))}/>
-        <Login               
-          history={history}
-          isAuthenticated={isAuthenticated}
-          errorMessage={errorMessage}
-          onLoginClick={creds => dispatch(loginUser(creds, history))}/>
       </div>
     )
   }

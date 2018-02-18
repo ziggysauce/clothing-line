@@ -24,10 +24,10 @@ const models = {
 // Sync DB tables
 gulp.task('sync', (cb) => {
   db.User.sync({ force: true })
-  .then(() => db.Product.sync({ force: true }))
-  .then(() => db.Product_Type.sync({ force: true }))
   .then(() => db.Orders.sync({ force: true }))
   .then(() => db.Order_Items.sync({ force: true }))
+  .then(() => db.Product.sync({ force: true }))
+  .then(() => db.Product_Type.sync({ force: true }))
   // .then(() => redis.set('allTeacherData', 'null'))
   .then(() => { cb(); })
   .catch((err) => { cb(err); });

@@ -34,6 +34,40 @@ const User = db.define('user', {
   },
 });
 
+const Orders= db.define('orders', {
+  order_id: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
+  order_details: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  order_date_ordered: {
+    type: Sequelize.DATE,
+    allowNull: false,
+  },
+});
+
+const Order_Items = db.define('order_items', {
+  order_item_id: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
+  order_item_quantity: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
+  order_item_price: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  order_item_details: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+})
+
 const Product_Type = db.define('product_type', {
   product_type_code: {
     type: Sequelize.INTEGER,
@@ -72,39 +106,6 @@ const Product = db.define('product', {
   },
 });
 
-const Orders= db.define('orders', {
-  order_id: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-  },
-  order_details: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
-  order_date_ordered: {
-    type: Sequelize.DATE,
-    allowNull: false,
-  },
-});
-
-const Order_Items = db.define('order_items', {
-  order_item_id: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-  },
-  order_item_quantity: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-  },
-  order_item_price: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
-  order_item_details: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
-})
 
 
 
@@ -116,11 +117,12 @@ const Order_Items = db.define('order_items', {
 
 // Relation Definitions
 
+Product_Type.hasMany(Product, { foreignKey: { name: 'product_type_code', allowNull: true }, onDelete: 'CASCADE' });
+Product.belongsTo(Product_Type, { foreignKey: { name: 'product_type_code', allowNull: true }, onDelete: 'CASCADE' });
+
 Orders.hasMany(Order_Items, { foreignKey: { name: 'order_id', allowNull: true }, onDelete: 'CASCADE' });
 Order_Items.belongsTo(Orders, { foreignKey: { name: 'order_id', allowNull: true }, onDelete: 'CASCADE' });
 
-Product_Type.hasMany(Product, { foreignKey: { name: 'product_type_code', allowNull: true }, onDelete: 'CASCADE' });
-Product.belongsTo(Product_Type, { foreignKey: { name: 'product_type_code', allowNull: true }, onDelete: 'CASCADE' });
 // School.hasMany(Cohort, { foreignKey: { name: 'school_id', allowNull: true }, onDelete: 'CASCADE' });
 // Cohort.belongsTo(School, { foreignKey: { name: 'school_id', allowNull: true }, onDelete: 'CASCADE' });
 
@@ -189,8 +191,8 @@ Product.belongsTo(Product_Type, { foreignKey: { name: 'product_type_code', allow
 
 module.exports = {
   User,
-  Product,
-  Product_Type,
   Order_Items,
-  Orders
+  Orders,
+  Product,
+  Product_Type
 };

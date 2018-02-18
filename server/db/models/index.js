@@ -77,6 +77,10 @@ const Product_Type = db.define('product_type', {
     type: Sequelize.STRING,
     allowNull: false,
   },
+  product_images: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  }
 });
 
 const Product = db.define('product', {

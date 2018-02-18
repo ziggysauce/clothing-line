@@ -70,6 +70,10 @@ const Product = db.define('product', {
     type: Sequelize.STRING,
     allowNull: false,
   },
+  product_images: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  }
 });
 
 const Orders= db.define('orders', {

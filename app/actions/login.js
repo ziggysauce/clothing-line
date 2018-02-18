@@ -62,26 +62,26 @@ exports.loginUser = (creds, history) => {
   };
 };
 
-exports.loginAdmin = (creds, history) => {
-  console.log('This is Creds: ', creds);
-  return (dispatch) => {
-    dispatch(requestLogin(creds));
-    return axios.get(`/api/users/${creds.email}/${creds.password}`)
-      .then((response) => {
-        if (!response.data) {
-          dispatch(loginError('Bad Request...'));
-          return Promise.reject(response);
-        }
-        localStorage.setItem('id_token', response.data.id_token);
-        localStorage.setItem('access_token', response.data.id_token);
-        dispatch(receiveLogin(response.data));
-        history.push('/home');
-      })
-      .catch((err) => {
-        console.log('Error: ', err);
-      });
-  };
-};
+// exports.loginAdmin = (creds, history) => {
+//   console.log('This is Creds: ', creds);
+//   return (dispatch) => {
+//     dispatch(requestLogin(creds));
+//     return axios.get(`/api/users/${creds.email}/${creds.password}`)
+//       .then((response) => {
+//         if (!response.data) {
+//           dispatch(loginError('Bad Request...'));
+//           return Promise.reject(response);
+//         }
+//         localStorage.setItem('id_token', response.data.id_token);
+//         localStorage.setItem('access_token', response.data.id_token);
+//         dispatch(receiveLogin(response.data));
+//         history.push('/home');
+//       })
+//       .catch((err) => {
+//         console.log('Error: ', err);
+//       });
+//   };
+// };
 
 
 exports.signupUser = (creds, history) => {

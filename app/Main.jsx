@@ -28,7 +28,9 @@ class Main extends Component {
               dispatch={dispatch}
             />
           </Route>
-          <Route path='/signup' component={Signup} />
+          <Route path='/signup' component={Signup} >
+            <Signup history={history} />
+          </Route>
           <Route path='/login' component={Login} >
             <Login history={history} />
           </Route>

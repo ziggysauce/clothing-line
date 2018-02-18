@@ -117,7 +117,7 @@ const deleteUser = async (req, res) => {
 
 router.get('/:auth_token', fetchAllUserData);
 router.get('/:email/:creds', fetchUser);
-router.post('/create/:id', createUser);
+router.post('/', createUser);
 router.put('/:auth_token', updateUser);
 router.delete('/:auth_token', deleteUser);
 

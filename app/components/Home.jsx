@@ -9,10 +9,11 @@ class Home extends Component {
     this.state = {};
   }
 render () {
+  console.log("this is some of the stuffs in the props", this.props)
   const { dispatch, errorMessage, history, isAuthenticated } = this.props;
   return(
     <div>
-      <h1>This is the homepage</h1>
+      <h1>Tosca whats up</h1>
       <Link to="/signup">Signup</Link>
       <Link to="/login">Login</Link>
       <Login               

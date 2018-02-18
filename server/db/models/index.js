@@ -34,6 +34,16 @@ const User = db.define('user', {
   },
 });
 
+// const Product = db.define('product', {
+//   id: {
+//     type: Sequelize.STRING,
+//     allowNull: false,
+//   },
+//   name: {
+//     type: Sequelize.STRING,
+//     allowNull: false,
+//   },
+// });
 
 
 

@@ -20,7 +20,7 @@ const fetchProduct = async (req, res) => {
     const product = await db.Product.findOne({ where: { product_id: req.params.product_id } });
     if (product) {
       console.log('Found product: ', { product: product, product_id: req.params.product_id });
-      res.status(200).send({ user: user, id_token: util.hasher(req.params.email) });
+      res.status(200).send({ product: product });
     } else {
       res.status(404).send('Credentials incorrect');
     }
@@ -60,7 +60,7 @@ const createProduct = async (req, res) => {
 
 const updateProduct = async (req, res) => {
   try {
-    const Product = await db.ProductUser.findOne({ where: { product_id: req.params.product_id } });
+    const Product = await db.Product.findOne({ where: { product_id: req.params.product_id } });
     if (Product) {
       const updatedProduct = await Product.update({
         product_name: req.body.product_name,
@@ -92,7 +92,7 @@ const deleteProduct = async (req, res) => {
     if (product) {
       product.destroy({ force: true });
       console.log('Product deleted');
-      res.status(200).send(user);
+      res.status(200).send(product);
     } else {
       console.log('Product not found');
       res.status(404).send('Product not found');

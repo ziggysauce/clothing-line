@@ -34,6 +34,81 @@ const User = db.define('user', {
   },
 });
 
+const Orders= db.define('orders', {
+  order_id: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
+  order_details: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  order_date_ordered: {
+    type: Sequelize.DATE,
+    allowNull: false,
+  },
+});
+
+const Order_Items = db.define('order_items', {
+  order_item_id: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
+  order_item_quantity: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
+  order_item_price: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  order_item_details: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+})
+
+const Product_Type = db.define('product_type', {
+  product_type_code: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
+  product_type_description: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  product_images: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  }
+});
+
+const Product = db.define('product', {
+  product_id: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
+  product_name: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  product_price: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  product_color: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  product_size: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  product_description: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+});
 
 
 
@@ -45,8 +120,12 @@ const User = db.define('user', {
 
 
 // Relation Definitions
-// School.hasMany(User, { foreignKey: { name: 'school_id', allowNull: true }, onDelete: 'CASCADE' });
-// User.belongsTo(School, { foreignKey: { name: 'school_id', allowNull: true }, onDelete: 'CASCADE' });
+
+Product_Type.hasMany(Product, { foreignKey: { name: 'product_type_code', allowNull: true }, onDelete: 'CASCADE' });
+Product.belongsTo(Product_Type, { foreignKey: { name: 'product_type_code', allowNull: true }, onDelete: 'CASCADE' });
+
+Orders.hasMany(Order_Items, { foreignKey: { name: 'order_id', allowNull: true }, onDelete: 'CASCADE' });
+Order_Items.belongsTo(Orders, { foreignKey: { name: 'order_id', allowNull: true }, onDelete: 'CASCADE' });
 
 // School.hasMany(Cohort, { foreignKey: { name: 'school_id', allowNull: true }, onDelete: 'CASCADE' });
 // Cohort.belongsTo(School, { foreignKey: { name: 'school_id', allowNull: true }, onDelete: 'CASCADE' });
@@ -115,5 +194,9 @@ const User = db.define('user', {
 //   .catch((err) => { console.log(err); });
 
 module.exports = {
-  User
+  User,
+  Order_Items,
+  Orders,
+  Product,
+  Product_Type
 };

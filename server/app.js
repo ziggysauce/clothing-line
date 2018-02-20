@@ -17,6 +17,7 @@ app.use(bodyparser.json({ limit: '50mb' }));
 
 app.use(cors());
 app.use('/api', router);
+
 // app.use(bodyparser.urlencoded({ limit: '50mb', extended: true }));
 
 // app.get('*', (req, res) => {

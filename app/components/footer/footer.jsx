@@ -48,7 +48,7 @@ class Footer extends Component {
               <input type="text" name="email" placeholder="Email" />
               <textarea name="message" placeholder="Message"></textarea>
               <br />
-              <button>Send</button>
+              <button className="submit-button">Send</button>
 
             </form>
           </div>

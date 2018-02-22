@@ -1,5 +1,7 @@
 .submit-button {
   border-radius: 3px;
+  border: none;
+  border-bottom: 3px solid darken(green, 10%);
   padding: 10px;
   background-color: green;
   color: white;

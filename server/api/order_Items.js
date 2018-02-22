@@ -14,13 +14,14 @@ const fetchAllOrderItemData = async (req, res) => {
     res.status(500).send(error);
   }
 };
-
+//i changed line 24 to send back the full data of the item, and i commented out the first get route 
+// that used the fetchAllOrderItemData function.
 const fetchOrderItem = async (req, res) => {
   try {
     const orderItem = await db.Order_Items.findOne({ where: { order_item_id: req.params.order_item_id } });
     if (orderItem) {
       console.log('Found order item: ', { order_items: orderItem, order_item_id: req.params.order_item_id });
-      res.status(200).send({ orders: order });
+      res.status(200).send(orderItem);
     } else {
       res.status(404).send('Credentials incorrect');
     }
@@ -99,7 +100,7 @@ const deleteOrderItem = async (req, res) => {
   }
 };
 
-router.get('/', fetchAllOrderItemData);
+// router.get('/:order_item_id', fetchAllOrderItemData);
 router.get('/:order_item_id', fetchOrderItem);
 router.post('/', createOrderItem);
 router.put('/', updateOrderItem);

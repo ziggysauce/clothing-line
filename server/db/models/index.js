@@ -4,14 +4,6 @@ const db = require('../config/database');
 // Table Definitions
 
 const User = db.define('user', {
-  password: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
-  email: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
   fName: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -20,17 +12,31 @@ const User = db.define('user', {
     type: Sequelize.STRING,
     allowNull: false,
   },
+  username: {
+    type: Sequelize.STRING,
+    allowNull: true,
+  },
+  email: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+<<<<<<< HEAD
   userType: {
     type: Sequelize.INTEGER,
     allowNull: true,
+=======
+  password: {
+    type: Sequelize.STRING,
+    allowNull: false,
+>>>>>>> 1910a92d8a019a698b2f73fbee053884f811ec2e
   },
   image: {
     type: Sequelize.TEXT,
     allowNull: true,
   },
-  username: {
-    type: Sequelize.TEXT,
-    allowNull: true,
+  userType: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
   },
 });
 

@@ -14,8 +14,7 @@ const fetchAllProductTypeData = async (req, res) => {
     res.status(500).send(error);
   }
 };
-//i changed line 24 to send back the full data of the item, and i commented out the first get route 
-// that used the fetchAllOrderItemData function.
+
 const fetchProductType = async (req, res) => {
   try {
     const productType = await db.Product_Type.findOne({ where: { product_type_code: req.params.product_type_code } });
@@ -37,8 +36,8 @@ const createProductType = async (req, res) => {
 
   try {
     console.log('create product type request: ', req.body);
-    const ProductTypes = await db.Product_Type.findOne({ where: { product_type_code: req.params.product_type_code } });
-    if (ProductTypes) {
+    const productTypes = await db.Product_Type.findOne({ where: { product_type_code: req.params.product_type_code } });
+    if (productTypes) {
       console.log('That product type has already been created. Please try creating another.');
       res.status(404).send('That has already been created. Please try creating another product type.');
     } else {
@@ -48,7 +47,7 @@ const createProductType = async (req, res) => {
         product_images: req.body.product_images,
       });
       console.log('Created new product type: ', { order_items: newProductType });
-      res.status(201).send({ order_items: newProductType });
+      res.status(201).send({ product_type: newProductType });
     }
   } catch (error) {
     console.log('Error in creatingProductType', error);

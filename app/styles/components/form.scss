@@ -1,0 +1,27 @@
+@import '../variables/colors.scss';
+@import '../variables/buttons.scss';
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.input-container {
+  border: 1px solid #000;
+  outline: none;
+  padding: 10px;
+  margin: 5px;
+}
+
+.input-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.input-col {
+  display: flex;
+  flex-direction: column;
+}

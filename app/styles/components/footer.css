@@ -1,0 +1,25 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* align-self: center; */
+  /* align-content: space-around; */
+  /* align-items: center; */
+}
+
+.footer-left {
+  /* border: 1px solid black; */
+  flex: 1
+
+}
+
+.footer-right {
+  /* border: 1px solid black; */
+  flex: 1;
+  display: flex; 
+  justify-content: flex-end;
+}
+
+/* .contacts {
+
+} */

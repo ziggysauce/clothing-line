@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../styles/main.scss';
 import Login from '../user/Login.jsx';
 import Signup from '../user/Signup.jsx';
 

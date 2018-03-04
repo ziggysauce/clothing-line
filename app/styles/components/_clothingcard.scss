@@ -1,0 +1,23 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.tops-card {
+  background: $light-grey;
+  border: 1px solid $medium-grey;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1em;
+  margin: 1em 0;
+  width: 25vw;
+
+  p, h2 {
+    margin: 0;
+  }
+}

@@ -9,6 +9,8 @@ class Home extends Component {
     this.state = {};
   }
 
+  
+
   render () {
     const { dispatch, errorMessage, history, isAuthenticated, logoutUser } = this.props;
     return (

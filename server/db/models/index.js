@@ -20,15 +20,9 @@ const User = db.define('user', {
     type: Sequelize.STRING,
     allowNull: false,
   },
-<<<<<<< HEAD
-  userType: {
-    type: Sequelize.INTEGER,
-    allowNull: true,
-=======
   password: {
     type: Sequelize.STRING,
     allowNull: false,
->>>>>>> 1910a92d8a019a698b2f73fbee053884f811ec2e
   },
   image: {
     type: Sequelize.TEXT,

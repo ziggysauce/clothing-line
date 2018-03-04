@@ -9,21 +9,15 @@ class Tops extends Component {
     };
   }
 
-  showTops() {
-    console.log('show tops func called');
-    axios.get('/api/products')
-      .then((results) => {
-        console.log(results.data);
-        this.setState({ tops: results.data })
-      });
-  }
-
   componentDidMount() {
-    this.showTops();
+    axios.get('/api/products')
+    .then((results) => {
+      // console.log(results.data);
+      this.setState({ tops: results.data })
+    });
   }
   
   render() {
-    console.log('after render: ', this.state);
     return (
       <div>
         <h1>This is the Tops component</h1>
@@ -41,6 +35,7 @@ class Tops extends Component {
             </div>
           );
         })}
+
         </div>
       </div>
     );

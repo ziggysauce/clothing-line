@@ -5,8 +5,9 @@ import Home from './components/pages/Home.jsx';
 
 import Login from './components/user/Login.jsx';
 import Signup from './components/user/Signup.jsx';
-import Cart from './components/user/Cart.jsx';
 import Account from './components/user/Account.jsx';
+
+import Cart from './components/shoppingCart/Cart.jsx';
 
 import Women from './components/pages/Women.jsx';
 import Men from './components/pages/Men.jsx';

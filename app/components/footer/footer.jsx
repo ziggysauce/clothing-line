@@ -28,7 +28,7 @@ class Footer extends Component {
             <a href="#">Contact</a>
           </p>
 
-          <p >Clothing-Line &copy; Dan & Jason</p>
+          <p >Clothing-Line &copy; Tosca, Jason, & Dan</p>
 
             <div >
               <a href="#"><i style={{padding: '8px'}} >link 1</i></a>

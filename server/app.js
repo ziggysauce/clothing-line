@@ -20,9 +20,9 @@ app.use('/api', router);
 
 // app.use(bodyparser.urlencoded({ limit: '50mb', extended: true }));
 
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, '../app/static/index.html'));
-// });
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../app/index.html'));
+});
 
 app.use(express.static(path.join(__dirname, '../app')));
 

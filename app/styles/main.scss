@@ -1,8 +1,7 @@
-@import './components/form.scss';
-@import './components/navbar.scss';
-@import './components/account.scss';
-
-html, body {
-  margin: 0;
-  padding: 0;
-}
+@import './variables/base';
+@import './variables/settings';
+@import './components/buttons';
+@import './components/form';
+@import './components/navbar';
+@import './components/account';
+@import './components/clothingcard';

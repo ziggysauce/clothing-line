@@ -31,6 +31,7 @@ import { createLogger } from 'redux-logger';
 
 import App from './App.jsx';
 import Reducers from './reducers';
+import './styles/main.scss';
 
 // const logger = createLogger({});
 const middleware = [

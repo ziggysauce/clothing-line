@@ -16,7 +16,6 @@ env({
 const db = require('./server/db/models');
 // const db = require('./server/db/models');
 
-
 const models = {
   User: db.User,
   Product: db.Product
@@ -103,13 +102,4 @@ gulp.task('webpack-dev-server', () => {
   });
 });
 
-// gulp.task('deploy', () => {
-
-// });
-
 gulp.task('default', ['nodemon', 'dbwatch', 'webpack-dev-server']);
-// gulp.task('default', ['nodemon']);
-
-
-// `gulp sync` when table is empty
-// `gulp` for nodemon and dbwatch

@@ -4,9 +4,7 @@ const router = require('express').Router();
 const fetchAllProductData = async (req, res) => {
   try {
     const product_id = (req.params.product_id);
-    const allData = await db.Product.findOne({
-      where: { product_id }
-    });
+    const allData = await db.Product.findAll();
     console.log('Products loaded: ', allData);
     res.status(200).send(allData);
   } catch (error) {

@@ -19,6 +19,7 @@ const db = require('./server/db/models');
 
 const models = {
   User: db.User,
+  Product: db.Product
 };
 
 // Sync DB tables
@@ -35,7 +36,7 @@ gulp.task('sync', (cb) => {
 
 // Seed DB for testing
 gulp.task('seed:seed', ['sync'], (cb) => {
-  SequelizeFixtures.loadFile(models)
+  SequelizeFixtures.loadFile('./server/db/models/seedData.json', models)
     .then(() => {
       cb();
     })
@@ -43,6 +44,8 @@ gulp.task('seed:seed', ['sync'], (cb) => {
       cb(err);
     });
 });
+
+gulp.task('seed', ['sync', 'seed:seed']);
 
 // gulp.task('seed', ['sync', 'seed:seed']);
 

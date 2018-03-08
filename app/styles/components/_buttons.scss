@@ -1,14 +1,23 @@
-.submit-button {
+.button {
   border-radius: 3px;
+  border: 1px solid $off-black;
+  outline: none;
   padding: 10px;
-  background-color: green;
-  color: white;
   transition: 0.3s;
   cursor: pointer;
 
   &:hover {
-    background-color: darkgreen;
-    color: white;
     transition: 0.3s;
+  }
+}
+
+.submit-button {
+  border: 1px solid $submit;
+  background-color: $submit;
+  color: white;
+
+  &:hover {
+    background-color: darken($submit, 10%);
+    color: white;
   }
 }

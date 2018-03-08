@@ -1,7 +1,8 @@
-@import './variables/base';
 @import './variables/settings';
+@import './variables/base';
 @import './components/buttons';
 @import './components/form';
 @import './components/navbar';
 @import './components/account';
-@import './components/clothingcard';
+@import './components/pages/lookbook/clothingcard';
+@import './components/pages/cart/cart';

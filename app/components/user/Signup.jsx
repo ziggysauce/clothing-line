@@ -80,7 +80,7 @@ class Signup extends Component {
               placeholder="usertype"
             />
           </div>
-          <button className="submit-button" onClick={event => this.handleClick(event)}>Submit</button>
+          <button className="button submit-button" onClick={event => this.handleClick(event)}>Submit</button>
         </form>
       </div>
     );

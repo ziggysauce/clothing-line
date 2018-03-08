@@ -1,0 +1,128 @@
+.cart-page {
+  padding: 0.5em;
+}
+
+.cart-components {
+  display: flex;
+  flex-direction: column;
+  // min-width: 300px;
+}
+
+/* 
+ * ==============================================
+ * =========  Style for Cart Items ==============
+ * ==============================================
+ */
+
+.my-cart--top {
+  padding-bottom: 1em;
+  border-bottom: 1px solid $off-black;
+}
+
+.cart-item-wrapper {
+  margin-top: 1em;
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.cart-item-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  border-bottom: 1px solid $off-black;
+
+  img {
+    max-width: 200px;
+  }
+}
+
+.cart-item-card--desc {
+  margin-left: 1em;
+  width: 100%;
+
+  p {
+    margin: 5px 0;
+  }
+}
+
+/* 
+ * ==============================================
+ * =========  Style for Order Summary  ==========
+ * ==============================================
+ */ 
+
+.order-summary {
+  padding: 1em;
+  text-transform: uppercase;
+
+  div {
+    padding: 1em;
+    border-bottom: 1px solid $medium_grey;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+  }
+
+  button {
+    margin: 1em 0;
+  }
+}
+
+.order-summary--val {
+  padding-left: 1em;
+}
+
+/* 
+ * ============================================
+ * =========  Style for tablet view  ==========
+ * ============================================
+ */ 
+
+
+@media (min-width: 468px) {
+  .my-cart {
+    padding: 0 2em;
+  }
+
+  .cart-item-card-wrapper {
+    display: flex;
+    flex-direction: row;
+  
+    img {
+      width: 30%;
+      height: 100%;
+    }
+  }
+}
+
+
+@media (min-width: 768px) {
+  .cart-page {
+    padding: 2em;
+  }
+
+  .cart-components {
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 2em;
+  }
+
+  .my-cart {
+    width: 70%;
+    margin-right: 2em;
+  }
+
+  .cart-item-card-wrapper img {
+    max-width: 200px;
+    max-height: 250px;
+  }
+
+  .order-summary {
+    width: 30%;
+  }
+}

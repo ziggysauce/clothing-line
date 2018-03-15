@@ -4,8 +4,9 @@ const router = require('express').Router();
 const fetchAllOrderItemData = async (req, res) => {
   try {
     const orderItem_id = (req.params.order_item_id);
-    const allData = await db.Order_Items.findOne({
-      where: { orderItem_id }
+    const allData = await db.Order_Items.findAll({
+      // TEMPORARILY SET THIS
+      where: { order_id: 1 }
     });
     console.log('Order item loaded: ', allData);
     res.status(200).send(allData);
@@ -89,7 +90,7 @@ const deleteOrderItem = async (req, res) => {
     if (orderItem) {
       orderItem.destroy({ force: true });
       console.log('Order item deleted');
-      res.status(200).send(order);
+      res.status(200).send(orderItem);
     } else {
       console.log('Order item not found');
       res.status(404).send('Order item not found');
@@ -100,7 +101,7 @@ const deleteOrderItem = async (req, res) => {
   }
 };
 
-// router.get('/:order_item_id', fetchAllOrderItemData);
+router.get('/', fetchAllOrderItemData);
 router.get('/:order_item_id', fetchOrderItem);
 router.post('/', createOrderItem);
 router.put('/', updateOrderItem);

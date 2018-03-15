@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Tops from '../products/Tops.jsx';
+import AllProducts from '../products/AllProducts.jsx';
 
 class Lookbook extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class Lookbook extends Component {
         <h1>This is the lookbook page</h1>
         <button onClick={event => this.handleClick(event)}>{this.state.buttonText}</button>
 
-        {this.state.showTops && <Tops />}
+        {this.state.showTops && <AllProducts />}
 
       </div>
     );

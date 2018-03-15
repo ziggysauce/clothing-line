@@ -18,7 +18,9 @@ const db = require('./server/db/models');
 
 const models = {
   User: db.User,
-  Product: db.Product
+  Product: db.Product,
+  Orders: db.Orders,
+  Order_Items: db.Order_Items
 };
 
 // Sync DB tables

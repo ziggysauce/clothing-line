@@ -59,7 +59,7 @@ const Order_Items = db.define('order_items', {
     allowNull: false,
   },
   order_item_price: {
-    type: Sequelize.STRING,
+    type: Sequelize.INTEGER,
     allowNull: false,
   },
   order_item_details: {
@@ -93,7 +93,7 @@ const Product = db.define('product', {
     allowNull: false,
   },
   product_price: {
-    type: Sequelize.STRING,
+    type: Sequelize.INTEGER,
     allowNull: false,
   },
   product_color: {
@@ -108,6 +108,10 @@ const Product = db.define('product', {
     type: Sequelize.STRING,
     allowNull: false,
   },
+  product_img: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  }
 });
 
 

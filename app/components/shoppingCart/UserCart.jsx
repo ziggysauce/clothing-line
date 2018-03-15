@@ -1,41 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import CartItems from './CartItems.jsx';
 import OrderSummary from './OrderSummary.jsx';
+
 
 class UserCart extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userCart: [
-        {
-          product_id: 1,
-          product_name: "Best Shirt ever",
-          product_price: 25,
-          product_color: "red",
-          product_size: "M",
-          product_description: "This gotta be the best shirt ever!",
-          product_img: "https://images.pexels.com/photos/733500/pexels-photo-733500.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb"
-        }, 
-        {
-          product_id: 2,
-          product_name: "Best Pants ever",
-          product_price: 30,
-          product_color: "blue",
-          product_size: "L",
-          product_description: "This gotta be the best pants ever!",
-          product_img: "https://images.pexels.com/photos/733500/pexels-photo-733500.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb"
-        }, 
-        {
-          product_id: 3,
-          product_name: "Best Hat ever",
-          product_price: 10,
-          product_color: "black",
-          product_size: "S",
-          product_description: "This gotta be the best hat ever!",
-          product_img: "https://images.pexels.com/photos/733500/pexels-photo-733500.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb"  
-        }
-      ],
+      userCart: [],
       subtotal: null,
       tax: null,
       total: null
@@ -43,14 +17,16 @@ class UserCart extends Component {
 
     this.handleClickRemoveAll = this.handleClickRemoveAll.bind(this);
     this.handleClickRemoveItem = this.handleClickRemoveItem.bind(this);
+    this.handleFillCart = this.handleFillCart.bind(this);
   }
 
   handleClickRemoveItem(e, index) {
-    this.state.userCart.splice(index, 1);
-    this.handleCalculateOrderSummary();
+    // this.state.userCart.splice(index, 1);
+    console.log('REMOVE FUNCTION NOT YET PROPERLY HANDLED');
   }
 
   handleClickRemoveAll() {
+    console.log('REMOVE ALL FUNCTION NOT YET PROPERLY HANDLED');
     this.setState({
       userCart: [],
       subtotal: null,
@@ -61,7 +37,7 @@ class UserCart extends Component {
 
   handleCalculateOrderSummary() {
     let subtotal = 0;
-    this.state.userCart.forEach((item) => { subtotal += item.product_price });
+    this.state.userCart.forEach((item) => { subtotal += item.order_item_price });
     const tax = Math.ceil(subtotal * .0575 * 100) / 100;
     const total = subtotal + 8 + tax;
 
@@ -72,11 +48,19 @@ class UserCart extends Component {
     });
   }
 
-  componentWillMount() {
-    this.handleCalculateOrderSummary();
+  handleFillCart() {
+    // Grab ORDER_ITEM data
+    // Unsure how to display PRODUCT data
+    axios.get('/api/order_items')
+    .then((results) => {
+      console.log(results);
+      this.setState({ userCart: results.data })
+      this.handleCalculateOrderSummary();
+    });
   }
 
   render() {
+    // console.log(this.state);    
     return (
       <div>
         <div className="cart-components">
@@ -85,6 +69,7 @@ class UserCart extends Component {
               <h1>My Cart ({this.state.userCart.length > 0 ? this.state.userCart.length : '0'})</h1>
               <Link to="/">Continue Shopping</Link>
             </div>
+            <button className="button" onClick={this.handleFillCart}>Dummy Data: Fill Cart</button>
             {this.state.userCart.length > 0 && 
               <CartItems 
                 items={this.state.userCart} 

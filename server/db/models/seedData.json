@@ -4,10 +4,11 @@
     "data": {
       "product_id": 1,
       "product_name": "Best Shirt ever",
-      "product_price":"$5",
-      "product_color": "red",
+      "product_price": 15,
+      "product_color": "white",
       "product_size": "M",
-      "product_description": "This gotta be the best shirt ever!"
+      "product_description": "This gotta be the best shirt ever!",
+      "product_img": "https://images.pexels.com/photos/733500/pexels-photo-733500.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb"
     }
   },
   {
@@ -15,98 +16,145 @@
     "data": {
       "product_id": 2,
       "product_name": "Best Pants ever",
-      "product_price":"$5",
-      "product_color": "blue",
-      "product_size": "M",
-      "product_description": "This gotta be the best pants ever!"
+      "product_price": 30,
+      "product_color": "black",
+      "product_size": "L",
+      "product_description": "This gotta be the best pants ever!",
+      "product_img": "https://images.pexels.com/photos/733500/pexels-photo-733500.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb"
     }
   },
   {
     "model": "Product",
     "data": {
       "product_id": 3,
-      "product_name": "blah blah blah",
-      "product_price":"$5",
-      "product_color": "red",
-      "product_size": "M",
-      "product_description": "blah blah blah"
+      "product_name": "Best Hat ever",
+      "product_price": 15,
+      "product_color": "navy",
+      "product_size": "One-Size",
+      "product_description": "This gotta be the best hat ever!",
+      "product_img": "https://images.pexels.com/photos/733500/pexels-photo-733500.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb"
     }
   },
   {
     "model": "Product",
     "data": {
       "product_id": 4,
-      "product_name": "blah blah blah",
-      "product_price":"$5",
-      "product_color": "red",
+      "product_name": "Best Shorts ever",
+      "product_price": 20,
+      "product_color": "grey",
       "product_size": "M",
-      "product_description": "blah blah blah"
+      "product_description": "This gotta be the best shorts ever!",
+      "product_img": "https://images.pexels.com/photos/733500/pexels-photo-733500.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb"
     }
   },
   {
     "model": "Product",
     "data": {
       "product_id": 5,
-      "product_name": "blah blah blah",
-      "product_price":"$5",
-      "product_color": "red",
-      "product_size": "M",
-      "product_description": "blah blah blah"
+      "product_name": "Best Capris ever",
+      "product_price": 20,
+      "product_color": "olive",
+      "product_size": "S",
+      "product_description": "This gotta be the best capris ever!",
+      "product_img": "https://images.pexels.com/photos/733500/pexels-photo-733500.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb"
     }
   },
   {
     "model": "Product",
     "data": {
       "product_id": 6,
-      "product_name": "blah blah blah",
-      "product_price":"$5",
-      "product_color": "red",
+      "product_name": "Best Longsleeve ever",
+      "product_price": 20,
+      "product_color": "cream",
       "product_size": "M",
-      "product_description": "blah blah blah"
+      "product_description": "This gotta be the best longsleeve ever!",
+      "product_img": "https://images.pexels.com/photos/733500/pexels-photo-733500.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb"
     }
   },
   {
     "model": "Product",
     "data": {
       "product_id": 7,
-      "product_name": "blah blah blah",
-      "product_price":"$5",
-      "product_color": "red",
-      "product_size": "M",
-      "product_description": "blah blah blah"
+      "product_name": "Best Hoodie ever",
+      "product_price": 30,
+      "product_color": "maroon",
+      "product_size": "L",
+      "product_description": "This gotta be the best hoodie ever!",
+      "product_img": "https://images.pexels.com/photos/733500/pexels-photo-733500.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb"
     }
   },
   {
     "model": "Product",
     "data": {
       "product_id": 8,
-      "product_name": "blah blah blah",
-      "product_price":"$5",
-      "product_color": "red",
-      "product_size": "M",
-      "product_description": "blah blah blah"
+      "product_name": "Best Jacket ever",
+      "product_price": 40,
+      "product_color": "black",
+      "product_size": "S",
+      "product_description": "This gotta be the best jacket ever!",
+      "product_img": "https://images.pexels.com/photos/733500/pexels-photo-733500.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb"
     }
   },
   {
     "model": "Product",
     "data": {
       "product_id": 9,
-      "product_name": "blah blah blah",
-      "product_price":"$5",
-      "product_color": "red",
-      "product_size": "M",
-      "product_description": "blah blah blah"
+      "product_name": "Best Shoes ever",
+      "product_price": 30,
+      "product_color": "grey",
+      "product_size": "10.5",
+      "product_description": "This gotta be the best shoes ever!",
+      "product_img": "https://images.pexels.com/photos/733500/pexels-photo-733500.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb"
     }
   },
   {
     "model": "Product",
     "data": {
       "product_id": 10,
-      "product_name": "blah blah blah",
-      "product_price":"$5",
-      "product_color": "red",
-      "product_size": "M",
-      "product_description": "blah blah blah"
+      "product_name": "Best Headband ever",
+      "product_price": 5,
+      "product_color": "orange",
+      "product_size": "One-Size",
+      "product_description": "This gotta be the best headband ever!",
+      "product_img": "https://images.pexels.com/photos/733500/pexels-photo-733500.jpeg?w=1260&h=750&dpr=2&auto=compress&cs=tinysrgb"
+    }
+  },
+  {
+    "model": "Orders",
+    "data": {
+      "order_id": 1,
+      "order_details": "First order",
+      "order_date_ordered": "2018-03-14T06:47:28.543Z"
+    }
+  },
+  {
+    "model": "Order_Items",
+    "data": {
+      "order_item_id": 1,
+      "order_item_quantity": 1,
+      "order_item_price": 5,
+      "order_item_details": "Headband order",
+      "order_id": 1
+    }
+  },
+  {
+    "model": "Order_Items",
+    "data": {
+      "order_item_id": 2,
+      "order_item_quantity": 1,
+      "order_item_price": 30,
+      "order_item_details": "Shoes order",
+      "order_id": 1
+    }
+  },
+  {
+    "model": "Order_Items",
+    "data": {
+      "order_item_id": 3,
+      "order_item_quantity": 1,
+      "order_item_price": 40,
+      "order_item_details": "Jacket order",
+      "order_id": 1
     }
   }
 ]

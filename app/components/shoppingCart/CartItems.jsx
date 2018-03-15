@@ -8,14 +8,10 @@ class CartItems extends Component {
           {this.props.items.map((item, index) => {
             return (
               <div key={index} className="cart-item-card-wrapper">
-                <img src={item.product_img}/>
                 <div className="cart-item-card--desc">
-                  <h3>{item.product_name}</h3>
-                  <p>{item.product_description}</p>
-                  <p>Size: {item.product_size}</p>
-                  <p>Color: {item.product_color}</p>
-                  <p>Quantity:</p>
-                  <p><strong>${item.product_price}.00</strong></p>
+                  <p>{item.order_item_details}</p>
+                  <p>Price: ${item.order_item_price}</p>
+                  <p>Quantity: {item.order_item_quantity}</p>
                 </div>
                 <button className="button" onClick={(e) => this.props.handleClickRemoveItem(e, index)}>Remove Item</button>
               </div>
@@ -29,3 +25,15 @@ class CartItems extends Component {
 }
 
 export default CartItems;
+
+
+
+// <img src={item.product_img}/>
+// <div className="cart-item-card--desc">
+//   <h3>{item.product_name}</h3>
+//   <p>{item.product_description}</p>
+//   <p>Size: {item.product_size}</p>
+//   <p>Color: {item.product_color}</p>
+//   <p>Quantity:</p>
+//   <p><strong>${item.product_price}.00</strong></p>
+// </div>
